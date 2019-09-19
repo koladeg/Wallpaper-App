@@ -7,6 +7,7 @@ The app pulls images from the unsplash api and displays them in the app.
 * Fetch & display images and information using axios & the unsplash api
 * Parse JSON data
 * Incorporate activity indicator before page is rendered
+* Handling user input with react native Panresponder and animated systems 
 
 # Demo
 
