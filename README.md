@@ -11,5 +11,5 @@ The app pulls images from the unsplash api and displays them in the app.
 
 # Demo
 
-![](https://media.giphy.com/media/lQOReHt2ZF94dtyIyC/giphy.gif)
+![](https://media.giphy.com/media/iBj8c25K7Oi4AMTtPv/giphy.gif)
 
