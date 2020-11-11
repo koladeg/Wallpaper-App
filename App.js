@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text,
   View,
   ActivityIndicator,
   FlatList,
@@ -12,11 +11,13 @@ import {
   TouchableOpacity,
   CameraRoll,
   Share,
+  Text,
 } from 'react-native';
 import { Permissions, FileSystem } from 'expo';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import UNSPLASH_CLIENTID from './config_keys.js';
+import BlinkingText from './BlinkingText';
 
 const { height, width } = Dimensions.get('window') ;
 
@@ -40,6 +41,10 @@ export default class App extends React.Component {
     this.borderRadius = this.state.scale.interpolate({
       inputRange:[0.9,1],
       outputRange:[30, 0],
+    })
+    this.clickOpacity = this.state.scale.interpolate({
+      inputRange:[0.9,1],
+      outputRange:[0, 1],
     })
   }
   loadWallpapers = () => {
@@ -128,6 +133,10 @@ export default class App extends React.Component {
         </View>
         <TouchableWithoutFeedback onPress={()=>this.showControls(item)}>
           <Animated.View style={[{height,width}, this.scale]}>
+            <Animated.View style={{ opacity: this.clickOpacity,
+              position: 'absolute',  left: 130, bottom: 10, zIndex:500 }}>
+            <BlinkingText  text="Click" />
+            </Animated.View>
             <Animated.Image
               style={{flex: 1, height: null, width: null, borderRadius: this.borderRadius}}
               source={{ uri: item.urls.regular }}
@@ -190,5 +199,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textStyle:{
+    borderWidth: 1,
+    borderColor: 'grey',
+    color: 'grey',
+    fontSize: 32,
+    fontWeight: '800',
+    padding: 10,
   },
 });

@@ -3,7 +3,6 @@
     "name": "WallpaperApp",
     "slug": "WallpaperApp",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android",
@@ -11,7 +10,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Wall.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,8 +22,12 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "com.WallpaperApp.kolade"
+    },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
